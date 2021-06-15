@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+/* Viewport */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    z-index: 10;
+    transition: 0.6s;
+}
+
+header .logo{
+   position: relative;
+   font-weight: 700; 
+   color: yellow;
+   text-decoration: none;
+   font-size: 2em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   transition: 0.9s;
+}
+
+header #toggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+header > #toggle::before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+
+    /* Top = arriba
+        left = izq
+        right = der
+        bottom=abajo */
+}
+
+
+header > #toggle::after{
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    /* Top = arriba
+        left = izq
+        right = der
+        bottom=abajo */
+}
+
+.banner.active header #toggle::before{
+    top: 50%;
+    left: 50%;
+    /* trasnformaciones
+    permiten manipular y transformar elementos */
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.banner.active header #toggle::after{
+    top: 50%;
+    left: 50%;
+    /* trasnformaciones
+    permiten manipular y transformar elementos */
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(content/images/bg.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.banner .active{
+    transform: translateY(-400px);
+}
+
+#navigation{
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: lightskyblue;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+
+#navigation.active{
+    right: 0;
+}
+
+#navigation ul li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.content {
+    max-width: 600px;
+    margin-left: 40px;
+    margin-top: 128px;
+}
+
+.content h2{
+    color: white;
+    font-size: 2.5em;
+
+}
+.content p{
+    font-size: 1.2em;
+    color: white;
+    font-weight: 300;
+}
+
+.content a{
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;    
+}
+
+.redes{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+}
+
+.redes li{
+    list-style: none;
+}
+
+.redes li a{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    margin: 10px;
+}
+
+.redes li a:hover{
+    background-color: #fff;
+}
+
+.redes li a img:hover{
+    filter: invert(0);
+}
+
+.redes li a img{
+    max-width: 20px;
+    color: #000; 
+    filter: invert(1);   
+}
+
+footer{
+
+    position:relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #000;
+    
+    }
+    
+    
+    
+    .inicio{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 0px;
+    }
+    
+    .inicio a {
+        position: static;
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+        border: 1px solid #fff;
+        margin: 10px;
+        right: 0%;
+        bottom: 0%;
+        z-index: 1;
+    }
+    
+    .inicio a:hover{
+        background-color: #fff;
+    }
+    
+    .inicio a img:hover{
+        filter: invert(0);
+    }
+    
+    .inicio a img{
+        max-width: 20px;
+        color: #000; 
+        filter: invert(1);   
+    }
+
+
